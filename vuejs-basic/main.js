@@ -2,7 +2,10 @@ const component = {
     data() {
         return { // READ & WRITE data
             name: 'Jon',
-            count: 0
+            count: 0,
+            inputTask: '',
+            // tasks: ['Eat', 'Code', 'Walk the dog']
+            tasks: []
             // headerClass: 'text-green'
         }
 
@@ -25,6 +28,11 @@ const component = {
         },
         decrement() {
             this.count--
+        },
+
+        submitHandler() {
+            this.tasks.push(this.inputTask)
+            this.inputTask = ''
         }
     }
 }

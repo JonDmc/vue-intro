@@ -28,6 +28,18 @@
         <!-- Events use @, otherwise use : -->
         <button v-on:click="increment">+ Increment</button> <!-- handle events (v-on or '@')-->
         <button v-on:click="decrement">- Decrement</button>
+
+        <form @submit.prevent="submitHandler">
+            <input type="text" v-model="inputTask">
+            <button type="submit"> Add to Task</button>
+        </form>
+        <div class="text-red" v-if="task.length === 0"> <!-- conditional rendering-->
+            No items yet
+
+        </div>
+        <ul>
+            <li v-for="item in tasks">{{item}}</li>
+        </ul>
     </div>
 
     <script src="https://unpkg.com/vue@3"></script>
